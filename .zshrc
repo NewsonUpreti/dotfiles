@@ -186,6 +186,7 @@ alias br="pomodoro 'break'"
 
 
 # alias for copying the current working directory using pwd and automating the copying process
+# requirement: xclip
 
 cwd() {
   pwd | xclip -selection clipboard
