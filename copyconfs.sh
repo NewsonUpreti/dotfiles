@@ -10,3 +10,6 @@ cp ~/.bashrc ~/dotfiles/.bashrc
 
 # Copy kitty.conf
 cp ~/.config/kitty/kitty.conf ~/dotfiles/kitty.conf
+
+# Copy .tmux.conf
+cp ~/.tmux.conf ~/dotfiles/.tmux.conf
