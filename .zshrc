@@ -150,6 +150,7 @@ alias f="fzf"
 alias help="tldr"
 alias o="nautilus"
 alias q='exit'
+alias rm='trash'
 alias tes="tmuxifier edit-session"
 alias tLs="tmuxifier list-sessions"
 alias tls="tmuxifier load-session"
