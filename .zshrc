@@ -155,6 +155,7 @@ alias tes="tmuxifier edit-session"
 alias tLs="tmuxifier list-sessions"
 alias tls="tmuxifier load-session"
 alias tns="tmuxifier new-session"
+alias img="kitty +kitten icat"
 
 
 # set up fzf key bindings and fuzzy completion
