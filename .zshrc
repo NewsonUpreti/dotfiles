@@ -156,6 +156,7 @@ alias tLs="tmuxifier list-sessions"
 alias tls="tmuxifier load-session"
 alias tns="tmuxifier new-session"
 alias img="kitty +kitten icat"
+alias open="xdg-open"
 
 
 # set up fzf key bindings and fuzzy completion
@@ -171,8 +172,8 @@ source ~/fzf-git.sh/fzf-git.sh
 # Requires https://github.com/caarlos0/timer to be installed. spd-say should ship with your distro
 
 declare -A pomo_options
-pomo_options["work"]="48"
-pomo_options["break"]="12"
+pomo_options["work"]="50"
+pomo_options["break"]="10"
 
 pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
