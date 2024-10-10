@@ -1,6 +1,7 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+#
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -17,7 +18,9 @@ eval "$(tmuxifier init -)"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
+# ZSH_THEME="jonathan"
+export PATH="/home/newson/quickemu:$PATH"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -79,7 +82,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search fzf-zsh-plugin)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf-zsh-plugin)
+# plugins removed right now which exists are  (web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -157,6 +161,11 @@ alias tls="tmuxifier load-session"
 alias tns="tmuxifier new-session"
 alias img="kitty +kitten icat"
 alias open="xdg-open"
+alias stex="gnome-extensions enable azclock@azclock.gitlab.com"
+alias kex="gnome-extensions disable azclock@azclock.gitlab.com"
+alias whatismyip="nslookup myip.opendns.com resolver1.opendns.com"
+
+alias doom="zig-out/bin/terminal-doom"
 
 
 # set up fzf key bindings and fuzzy completion
@@ -172,8 +181,8 @@ source ~/fzf-git.sh/fzf-git.sh
 # Requires https://github.com/caarlos0/timer to be installed. spd-say should ship with your distro
 
 declare -A pomo_options
-pomo_options["work"]="50"
-pomo_options["break"]="10"
+pomo_options["work"]="30"
+pomo_options["break"]="5"
 
 pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
@@ -195,3 +204,9 @@ cwd() {
   pwd | xclip -selection clipboard
   echo "Copied: $(pwd)"
 }
+
+autoload -U compinit
+compinit -i
+
+# gh - github command line 
+eval "$(gh copilot alias -- zsh)"
