@@ -22,6 +22,11 @@ cp ~/dotfiles/.ssh/config ~/.ssh/config
 chmod 600 ~/.ssh/config
 echo "✓ Restored SSH config"
 
+# load lazygit colors
+mkdir -p ~/.config/lazygit/
+cp ~/dotfiles/lazygit/config.yml ~/.config/lazygit/config.yml
+echo "✓ Restored lazygit catpuccin color"
+
 # in new devices, may need to chmod 600 sshPub_key to access the repo.
 
 # Load GNOME shell extensions settings

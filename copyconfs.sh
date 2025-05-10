@@ -28,6 +28,11 @@ mkdir -p ~/dotfiles/.ssh/
 cp ~/.ssh/config ~/dotfiles/.ssh/config
 echo "✓ Copied SSH config"
 
+# Backup lazygit colors
+mkdir -p ~/dotfiles/lazygit/
+cp ~/.config/lazygit/config.yml ~/dotfiles/lazygit/config.yml
+echo "✓ Backed up lazygit catpuccin color"
+
 # Backup GNOME shell extension settings
 dconf dump /org/gnome/shell/extensions/ > ~/dotfiles/gnomeExtensionSettings.dconf
 echo "✓ Dumped GNOME shell extensions to gnomeExtensionSettings.dconf"
