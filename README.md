@@ -24,4 +24,6 @@
 
 - My zsh contains theme, plugins like autocomplete, syntax highlighting, git integration etc. Fuzzyfinder (fzf) is also integrated along with bat preview and git integration on bat let us see live changes and diff of git files side by side. It contains custom aliases and also contains pomodoro that announces the session. I use autojump, which remembers the folders far far away and let me jump to the folder with j word. and much more.....
 
+## extension settings, wm keybindings, lazygit and more added
+
 #### Note: If you think, they look good. They work good \* 3000 . Feel free to use.
