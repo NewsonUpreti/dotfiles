@@ -1,6 +1,6 @@
 ### Nothing much.
 
-## neovim config have a separate repo.
+## neovim config have a separate repo. Check it out
 
 ### Enjoy
 
