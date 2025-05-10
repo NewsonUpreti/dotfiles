@@ -1,18 +1,26 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-#
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+#
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-quiet-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-quiet-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-eval "$(tmuxifier init -)"
+# export PATH="$HOME/.tmuxifier/bin:$PATH"
+# eval "$(tmuxifier init -)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -20,7 +28,7 @@ eval "$(tmuxifier init -)"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 # ZSH_THEME="jonathan"
-export PATH="/home/newson/quickemu:$PATH"
+# export PATH="/home/newson/quickemu:$PATH"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -64,7 +72,7 @@ export PATH="/home/newson/quickemu:$PATH"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+ # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -82,7 +90,7 @@ export PATH="/home/newson/quickemu:$PATH"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf-zsh-plugin)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump  )
 # plugins removed right now which exists are  (web-search)
 
 source $ZSH/oh-my-zsh.sh
@@ -100,14 +108,32 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+#
+#
+#
+# -- Use fd instead of fzf --
+#
+
+export FZF_DEFAULT_COMMAND="fdfind --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fdfind --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fdfind --hidden --exclude .git . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fdfind --type=d --hidden --exclude .git . "$1"
+}
 
 # Preview file content using bat (https://github.com/sharkdp/bat)
-export FZF_CTRL_T_OPTS="
-  --walker-skip .git,node_modules,target
-  --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else batcat -n --color=always --line-range :500 {}; fi"
 
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
 # Advanced customization of fzf options via _fzf_comprun function
@@ -119,12 +145,19 @@ _fzf_comprun() {
 
   case "$command" in
     cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
-    export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
+    export|unset) fzf --preview "eval 'echo ${}'"         "$@" ;;
     ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
+    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
   esac
 }
+# --- setup fzf theme ---
+fg="#CBE0F0"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
 
+export FZF_DEFAULT_OPTS="--color=fg:${fg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 export EDITOR='nvim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -149,7 +182,8 @@ alias HOME="sudo umount /mnt/HOME"
 alias fl="ranger"
 alias ls="eza --git --long --color=always --icons=always --no-user --no-permissions"
 alias system="fastfetch"
-alias cat="bat"
+alias cat="batcat"
+alias bat="batcat"
 alias f="fzf"
 alias help="tldr"
 alias o="nautilus ."
@@ -164,17 +198,19 @@ alias open="xdg-open"
 alias stex="gnome-extensions enable azclock@azclock.gitlab.com"
 alias kex="gnome-extensions disable azclock@azclock.gitlab.com"
 alias whatismyip="nslookup myip.opendns.com resolver1.opendns.com"
+alias lg="lazygit"
+alias ta="tmux attach"
 
 alias doom="zig-out/bin/terminal-doom"
 
 
 # set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
-eval $(thefuck --alias)
+# eval "$(fzf --zsh)"
+# eval $(thefuck --alias)
 
 # changing the bat theme
 export BAT_THEME=tokyonight_night
-source ~/fzf-git.sh/fzf-git.sh
+# source ~/fzf-git.sh/fzf-git.sh
 
 # Pomodoro by bashbunni.
 # study stream aliases
@@ -209,13 +245,34 @@ autoload -U compinit
 compinit -i
 
 # gh - github command line 
-eval "$(gh copilot alias -- zsh)"
+# eval "$(gh copilot alias -- zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# bun completions
+[ -s "/home/vimzone-user7/.bun/_bun" ] && source "/home/vimzone-user7/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH=/usr/lib/jvm/graalvm-23/bin:$PATH
+export JAVA_HOME=/usr/lib/jvm/graalvm-23
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/vimzone-user7/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-HISTFILE=$HOME/.zsh_history
-SAVEHIST=1000
-HISTSIZE=999
-setopt share_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_verify
+eval "$(fzf --zsh)"
+
+
+source ~/fzf-git.sh/fzf-git.sh
