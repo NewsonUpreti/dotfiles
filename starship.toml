@@ -1,3 +1,23 @@
+# install starship to begin using
+# install with shell
+# curl -sS https://starship.rs/install.sh | sh
+
+# if in macos, install with homebrew. 
+# brew install starship
+
+# configuration for bash
+# ~/.bashrc
+# eval "$(starship init bash)"
+
+# configuration for zsh
+# ~/.zshrc
+# eval "$(starship init zsh)"
+
+# configuration for fish
+# ~/.config/fish/config.fish
+# starship init fish | source
+
+
 # can use your distro icon in place of  
 format = """\
 [](bg:#030B16 fg:#7DF9AA)\
