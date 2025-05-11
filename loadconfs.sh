@@ -16,6 +16,10 @@ echo "✓ Restored kitty config"
 cp ~/dotfiles/.tmux.conf ~/.tmux.conf
 echo "✓ Restored .tmux.conf"
 
+# Backup starship prompt custom@newson
+cp ~/dotfiles/starship.toml ~/.config/starship.toml
+echo "✓ Restored starship.toml"
+
 # Restore .ssh config
 mkdir -p ~/.ssh
 cp ~/dotfiles/.ssh/config ~/.ssh/config

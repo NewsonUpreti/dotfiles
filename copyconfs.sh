@@ -19,6 +19,10 @@ echo "✓ Copied .zshrc"
 cp ~/.config/kitty/kitty.conf ~/dotfiles/kitty.conf
 echo "✓ Copied kitty.conf"
 
+# Backup starship prompt custom@newson
+cp ~/.config/starship.toml ~/dotfiles/starship.toml
+echo "✓ Copied starship.toml"
+
 # Backup .tmux.conf
 cp ~/.tmux.conf ~/dotfiles/.tmux.conf
 echo "✓ Copied .tmux.conf"

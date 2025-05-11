@@ -1,0 +1,55 @@
+# can use your distro icon in place of  
+format = """\
+[](bg:#030B16 fg:#7DF9AA)\
+[ ](bg:#7DF9AA fg:#030B16)\ 
+[](fg:#7DF9AA bg:#1C3A5E)\
+$time\
+[](fg:#1C3A5E bg:#8DFBD2)\
+$directory\
+$git_branch\
+$git_status\
+[](fg:#fff bg:#030B16)\
+$character\
+"""
+
+# Time segment
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#1C3A5E fg:#8DFBD2"
+format = "[ 󱑍 $time ]($style)"
+
+# Directory segment
+[directory]
+format = "[  $path ]($style)"
+style = "fg:#1C3A5E bg:#8DFBD2"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Git branch segment
+[git_branch]
+symbol = ""
+style = "fg:#8DFBD2 bg:#1C3A5E"
+format = '[](bg:#1C3A5E fg:#8DFBD2)[ $symbol $branch ]($style)'
+
+# Git status segment — will always render after branch
+[git_status]
+style = "bg:#25f772 fg:#1C3A5E"
+format = '[ $modified$staged$untracked$conflicted$ahead_behind ]($style)'
+
+
+# git status are not proper, manually customized status and count. may need adjustment
+# Show these symbols with counts (or blank if none)
+# modified = '󰷥 $count'     # modified but unstaged
+modified = '$count! '     # modified but unstaged
+staged = '$count󰱒 '       # staged files
+untracked = '$count '    # untracked files
+conflicted = '$count '   # merge conflicts
+ahead = '$count⇡ '
+behind = '$count⇣ '
+diverged = '$ahead_count⇕⇡ $behind_count⇣'
+
+# Character prompt
+[character]
+success_symbol = '[ ➜](bold green)'
+error_symbol = '[ ✗](#E84D44)'
