@@ -10,6 +10,7 @@ echo "✓ Restored .zshrc"
 
 # Restore .vimrc
 cp ~/dotfiles/.vimrc ~/.vimrc
+echo "✓ Restored .vimrc"
 
 # Restore kitty.conf
 mkdir -p ~/.config/kitty/

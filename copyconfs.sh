@@ -18,6 +18,10 @@ echo "✓ Copied .zshrc"
 # cp -r ~/.config/nvim ~/dotfiles/nvim
 # echo "✓ Copied Neovim config"
 
+# Backup .vimrc
+cp ~/.vimrc ~/dotfiles/.vimrc 
+echo "✓ Copied .vimrc"
+
 # Backup kitty.conf
 cp ~/.config/kitty/kitty.conf ~/dotfiles/.config/kitty/kitty.conf
 echo "✓ Copied kitty.conf"
