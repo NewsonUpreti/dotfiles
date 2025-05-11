@@ -1,5 +1,6 @@
-
 #!/bin/bash
+
+# restore configs
 
 echo "Restoring dotfiles and GNOME settings..."
 
@@ -7,9 +8,12 @@ echo "Restoring dotfiles and GNOME settings..."
 cp ~/dotfiles/.zshrc ~/.zshrc
 echo "✓ Restored .zshrc"
 
+# Restore .vimrc
+cp ~/dotfiles/.vimrc ~/.vimrc
+
 # Restore kitty.conf
 mkdir -p ~/.config/kitty/
-cp ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+cp ~/dotfiles/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 echo "✓ Restored kitty config"
 
 # Restore .tmux.conf
@@ -17,7 +21,7 @@ cp ~/dotfiles/.tmux.conf ~/.tmux.conf
 echo "✓ Restored .tmux.conf"
 
 # Backup starship prompt custom@newson
-cp ~/dotfiles/starship.toml ~/.config/starship.toml
+cp ~/dotfiles/.config/starship.toml ~/.config/starship.toml
 echo "✓ Restored starship.toml"
 
 # Restore .ssh config
@@ -28,7 +32,7 @@ echo "✓ Restored SSH config"
 
 # load lazygit colors
 mkdir -p ~/.config/lazygit/
-cp ~/dotfiles/lazygit/config.yml ~/.config/lazygit/config.yml
+cp ~/dotfiles/.config/lazygit/config.yml ~/.config/lazygit/config.yml
 echo "✓ Restored lazygit catpuccin color"
 
 # in new devices, may need to chmod 600 sshPub_key to access the repo.

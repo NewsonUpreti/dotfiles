@@ -2,7 +2,10 @@
 
 echo "🔄 Backing up your configuration files to ~/dotfiles..."
 
-mkdir -p ~/dotfiles/
+mkdir -p ~/dotfiles/.config
+mkdir -p ~/dotfiles/.config/kitty/
+mkdir -p ~/dotfiles/.ssh/
+mkdir -p ~/dotfiles/.config/lazygit/
 # Backup .zshrc
 cp ~/.zshrc ~/dotfiles/.zshrc
 echo "✓ Copied .zshrc"
@@ -16,11 +19,11 @@ echo "✓ Copied .zshrc"
 # echo "✓ Copied Neovim config"
 
 # Backup kitty.conf
-cp ~/.config/kitty/kitty.conf ~/dotfiles/kitty.conf
+cp ~/.config/kitty/kitty.conf ~/dotfiles/.config/kitty/kitty.conf
 echo "✓ Copied kitty.conf"
 
 # Backup starship prompt custom@newson
-cp ~/.config/starship.toml ~/dotfiles/starship.toml
+cp ~/.config/starship.toml ~/dotfiles/.config/starship.toml
 echo "✓ Copied starship.toml"
 
 # Backup .tmux.conf
@@ -28,13 +31,11 @@ cp ~/.tmux.conf ~/dotfiles/.tmux.conf
 echo "✓ Copied .tmux.conf"
 
 # Backup SSH config
-mkdir -p ~/dotfiles/.ssh/
 cp ~/.ssh/config ~/dotfiles/.ssh/config
 echo "✓ Copied SSH config"
 
 # Backup lazygit colors
-mkdir -p ~/dotfiles/lazygit/
-cp ~/.config/lazygit/config.yml ~/dotfiles/lazygit/config.yml
+cp ~/.config/lazygit/config.yml ~/dotfiles/.config/lazygit/config.yml
 echo "✓ Backed up lazygit catpuccin color"
 
 # Backup GNOME shell extension settings
