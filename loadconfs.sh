@@ -28,6 +28,7 @@ echo "✓ Restored starship.toml"
 # Restore .ssh config
 mkdir -p ~/.ssh
 cp ~/dotfiles/.ssh/config ~/.ssh/config
+chmod 700 ~/.ssh
 chmod 600 ~/.ssh/config
 echo "✓ Restored SSH config"
 
