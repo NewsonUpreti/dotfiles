@@ -25,6 +25,18 @@ echo "✓ Restored .tmux.conf"
 cp ~/dotfiles/.config/starship.toml ~/.config/starship.toml
 echo "✓ Restored starship.toml"
 
+# Restore Hyprland config
+mkdir -p ~/.config/hypr/
+cp ~/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
+cp ~/dotfiles/.config/hypr/hypridle.conf ~/.config/hypr/hypridle.conf
+cp ~/dotfiles/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf
+echo "✓ Restored Hyprland config"
+
+# Restore Waybar config
+mkdir -p ~/.config/waybar/
+cp -r ~/dotfiles/.config/waybar/* ~/.config/waybar/
+echo "✓ Restored Waybar config"
+
 # Restore .ssh config
 mkdir -p ~/.ssh
 cp ~/dotfiles/.ssh/config ~/.ssh/config

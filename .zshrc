@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -26,8 +26,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
-ZSH_THEME=""
+ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
+# ZSH_THEME=""
 # ZSH_THEME="jonathan"
 # export PATH="/home/newson/quickemu:$PATH"
 
@@ -115,9 +115,9 @@ source $ZSH/oh-my-zsh.sh
 # -- Use fd instead of fzf --
 #
 
-export FZF_DEFAULT_COMMAND="fdfind --hidden --strip-cwd-prefix --exclude .git"
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fdfind --type=d --hidden --strip-cwd-prefix --exclude .git"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
@@ -132,7 +132,7 @@ _fzf_compgen_dir() {
 }
 
 # Preview file content using bat (https://github.com/sharkdp/bat)
-show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else batcat -n --color=always --line-range :500 {}; fi"
+show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
@@ -173,7 +173,7 @@ export EDITOR='nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias c="clear"
 alias sdu="sudo dnf update"
 alias vi="nvim"
@@ -183,8 +183,8 @@ alias HOME="sudo umount /mnt/HOME"
 alias fl="ranger"
 alias ls="eza --git --long --color=always --icons=always --no-user --no-permissions"
 alias system="fastfetch"
-alias cat="batcat"
-alias bat="batcat"
+alias cat="bat"
+alias bat="bat"
 alias f="fzf"
 alias help="tldr"
 alias o="nautilus ."
@@ -277,4 +277,6 @@ eval "$(fzf --zsh)"
 
 
 source ~/fzf-git.sh/fzf-git.sh
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+
+export PATH="/usr/local/go/bin:$PATH"

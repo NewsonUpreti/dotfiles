@@ -22,6 +22,18 @@ echo "✓ Copied .zshrc"
 cp ~/.vimrc ~/dotfiles/.vimrc 
 echo "✓ Copied .vimrc"
 
+# Backup Hyprland config
+mkdir -p ~/dotfiles/.config/hypr/
+cp ~/.config/hypr/hyprland.conf ~/dotfiles/.config/hypr/hyprland.conf
+cp ~/.config/hypr/hypridle.conf ~/dotfiles/.config/hypr/hypridle.conf
+cp ~/.config/hypr/hyprlock.conf ~/dotfiles/.config/hypr/hyprlock.conf
+echo "✓ Copied Hyprland config"
+
+# Backup Waybar config
+mkdir -p ~/dotfiles/.config/waybar/
+cp -r ~/.config/waybar/* ~/dotfiles/.config/waybar/
+echo "✓ Copied Waybar config"
+
 # Backup kitty.conf
 cp ~/.config/kitty/kitty.conf ~/dotfiles/.config/kitty/kitty.conf
 echo "✓ Copied kitty.conf"
