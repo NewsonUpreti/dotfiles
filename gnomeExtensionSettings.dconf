@@ -252,8 +252,8 @@ clear-on-boot=false
 history-size=200
 
 [color-picker]
-color-history=[uint32 32283404, 23772729, 6994232, 6797112, 32217867, 31394058, 19372871, 18387199, 20363519, 1609983, 1468636, 18245852]
-default-format=uint32 1
+color-history=[uint32 5424154, 9026184, 5424154, 1315860, 17304633, 527417, 18249727, 32283404, 23772729, 6994232, 6797112, 32217867]
+default-format=uint32 0
 menu-size=uint32 12
 preview-style=uint32 0
 
@@ -925,7 +925,7 @@ radius-bottomleft=true
 radius-bottomright=true
 radius-topleft=true
 radius-topright=true
-reloadstyle=false
+reloadstyle=true
 removestyle=false
 sbar-gradient='none'
 set-fullscreen=true
@@ -1039,10 +1039,22 @@ version=33
 
 [switcher]
 activate-after-ms=uint32 100
-launcher-stats='{"com.mattjakeman.ExtensionManager.desktop":1,"thorium-browser.desktop":1,"com.spotify.Client.desktop":1}'
+launcher-stats='{"com.mattjakeman.ExtensionManager.desktop":1,"thorium-browser.desktop":1,"com.spotify.Client.desktop":2}'
 max-width-percentage=uint32 60
 on-active-display=true
 workspace-indicator=false
+
+[tactile]
+col-0=2
+col-2=0
+col-3=0
+grid-cols=2
+grid-rows=2
+maximize=false
+monitor-0-layout=2
+row-0=1
+row-1=1
+tile-0-0=['q']
 
 [tiling-assistant]
 activate-layout0=@as []
@@ -1061,7 +1073,7 @@ enable-tiling-popup=false
 focus-hint-color='rgb(50,129,234)'
 import-layout-examples=false
 last-version-installed=48
-maximize-with-gap=true
+maximize-with-gap=false
 overridden-settings={'org.gnome.mutter.edge-tiling': <@mb nothing>}
 restore-window=['<Super>Down']
 search-popup-layout=@as []
