@@ -21,6 +21,9 @@
   "modules-right": [
     "custom/left-arrow-dark",
     "custom/left-arrow-light",
+    "custom/hyprpicker",
+    "custom/left-arrow-dark",
+    "custom/left-arrow-light",
     "network",
     "custom/left-arrow-dark",
     "pulseaudio",
@@ -54,6 +57,13 @@
     "format": "",
     "tooltip": false
   },
+
+"custom/hyprpicker": {
+  "exec": "echo '🖌️'",
+  "format": "{}",
+  "on-click": "hyprpicker",
+  "tooltip": "Open Color Picker"
+},
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -99,7 +109,7 @@
     },
     "scroll-step": 5,
     "on-click": "pamixer -t",
-    "on-click-right": "pulseaudio"
+    "on-click-right": "pavucontrol"
   },
 
   "memory": {
@@ -141,4 +151,5 @@
   "on-click": "brightnessctl set 2%+",
   "on-click-right": "brightnessctl set 2%-"
 }
+
 }
