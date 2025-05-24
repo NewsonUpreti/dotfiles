@@ -29,6 +29,15 @@ cp ~/.config/hypr/hypridle.conf ~/dotfiles/.config/hypr/hypridle.conf
 cp ~/.config/hypr/hyprlock.conf ~/dotfiles/.config/hypr/hyprlock.conf
 echo "✓ Copied Hyprland config"
 
+# Backup Yazi config
+mkdir -p ~/dotfiles/.config/yazi/
+cp ~/.config/yazi/theme.toml ~/dotfiles/.config/yazi/theme.toml
+cp ~/.config/yazi/keymap.toml ~/dotfiles/.config/yazi/keymap.toml
+cp ~/.config/yazi/yazi.toml ~/dotfiles/.config/yazi/yazi.toml
+echo "✓ Copied yazi config"
+
+
+
 # Backup Waybar config
 mkdir -p ~/dotfiles/.config/waybar/
 cp -r ~/.config/waybar/* ~/dotfiles/.config/waybar/

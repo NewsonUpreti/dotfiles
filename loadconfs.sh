@@ -32,6 +32,14 @@ cp ~/dotfiles/.config/hypr/hypridle.conf ~/.config/hypr/hypridle.conf
 cp ~/dotfiles/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf
 echo "✓ Restored Hyprland config"
 
+
+# Restore Yazi config
+mkdir -p ~/.config/yazi/
+cp ~/dotfiles/.config/yazi/theme.toml ~/.config/yazi/theme.toml 
+cp ~/dotfiles/.config/yazi/keymap.toml ~/.config/yazi/keymap.toml 
+cp ~/dotfiles/.config/yazi/yazi.toml ~/.config/yazi/yazi.toml 
+echo "✓ Restored yazi config"
+
 # Restore Waybar config
 mkdir -p ~/.config/waybar/
 cp -r ~/dotfiles/.config/waybar/* ~/.config/waybar/

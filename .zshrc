@@ -180,7 +180,7 @@ alias vi="nvim"
 alias e="nvim"
 alias home="sudo mount /dev/nvme0n1p8 /mnt/HOME"
 alias HOME="sudo umount /mnt/HOME"
-alias fl="ranger"
+alias fl="yazi"
 alias ls="eza --git --long --color=always --icons=always --no-user --no-permissions"
 alias system="fastfetch"
 alias cat="bat"
@@ -289,3 +289,11 @@ source ~/fzf-git.sh/fzf-git.sh
 # eval "$(starship init zsh)"
 
 export PATH="/usr/local/go/bin:$PATH"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
