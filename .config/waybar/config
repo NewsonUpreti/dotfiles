@@ -63,7 +63,7 @@
   },
   "memory": {
     "interval": 5,
-    "format": "Mem - {}%"
+    "format": "Mem {}%"
   },
   "cpu": {
     "interval": 5,
