@@ -1,119 +1,73 @@
-
 {
   "layer": "top",
   "position": "top",
-
+  "height": 28,
+  "spacing": 0,
   "modules-left": [
-    "hyprland/workspaces",
+    "hyprland/workspaces"
   ],
   "modules-center": [
-    "custom/left-arrow-dark",
-    "clock#1",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
-    "clock#2",
-    "custom/right-arrow-dark",
-    "custom/right-arrow-light",
-    "clock#3",
-    "custom/right-arrow-dark"
+    "clock"
   ],
   "modules-right": [
-    "custom/left-arrow-dark",
-    "custom/left-arrow-light",
     "network",
-    "custom/left-arrow-dark",
     "pulseaudio",
-    "custom/left-arrow-light",
     "backlight",
-    "custom/left-arrow-dark",
     "memory",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
     "cpu",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
     "battery",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
+    "disk",
+    "tray"
   ],
-
-  "custom/left-arrow-dark": {
-    "format": "",
-    "tooltip": false
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    },
+    "on-click": "activate",
   },
-  "custom/left-arrow-light": {
-    "format": "",
-    "tooltip": false
+  "clock": {
+    "format": "{:%a | %H:%M | %Y-%m-%d}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "format": {
+        "months": "<span color='#CDD6F4'>{}</span>",
+        "days": "<span color='#CDD6F4'>{}</span>",
+        "weeks": "<span color='#585B70'>{}</span>",
+        "weekdays": "<span color='#F5E0DC'>{}</span>",
+        "today": "<span color='#F38BA8'>[{}]</span>"
+      }
+    }
   },
-  "custom/right-arrow-dark": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/right-arrow-light": {
-    "format": "",
-    "tooltip": false
-  },
-
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "format": "{name}"
-  },
-"hyprland/workspaces": {
-  "format": " {name}",
-  "format-icons": {
-    "active": "",
-    "default": ""
-  },
-  "on-click": "activate",  // Optional: click to switch
-  "persistent-workspaces": {
-    "HDMI-A-1": [1, 2, 3, 4, 5],
-    "eDP-1": [1, 2, 3, 4, 5]
-  }
-}
-  },
-  "clock#1": {
-    "format": "{:%a}",
-    "tooltip": false
-  },
-  "clock#2": {
-    "format": "{:%H:%M}",
-    "tooltip": false
-  },
-  "clock#3": {
-    "format": "{:%Y-%m-%d}",
-    "tooltip": false
-  },
-
   "network": {
-    "format-wifi": "({signalStrength}%) ",
-    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-    "format-disconnected": "Disconnected ⚠",
-    "on-click-right": "nm-connection-editor"
+    "format-wifi": "{signalStrength}% ",
+    "format-ethernet": "{ipaddr} ",
+    "format-disconnected": "⚠",
+    "on-click-right": "nm-connection-editor",
+    "tooltip-format": "{essid} ({signalStrength}%)"
   },
-
   "pulseaudio": {
-    "format": "{icon} {volume:2}%",
-    "format-bluetooth": "{icon}  {volume}%",
-    "format-muted": "MUTE",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": " MUTE",
     "format-icons": {
       "headphones": "",
-      "default": [
-        "",
-        ""
-      ]
+      "default": ["", ""]
     },
     "scroll-step": 5,
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol"
   },
-
   "memory": {
     "interval": 5,
-    "format": "Mem {}%"
+    "format": "Mem - {}%"
   },
   "cpu": {
     "interval": 5,
-    "format": "CPU {usage:2}%"
+    "format": "CPU {usage}%"
   },
   "battery": {
     "states": {
@@ -122,29 +76,23 @@
       "critical": 15
     },
     "format": "{icon} {capacity}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", "", "", ""]
   },
   "disk": {
     "interval": 5,
-    "format": "Disk {percentage_used:2}%",
+    "format": "Disk {percentage_used}%",
     "path": "/"
   },
   "tray": {
-    "icon-size": 20
+    "icon-size": 16,
+    "spacing": 5
   },
-"backlight": {
-  "device": "intel_backlight",  // or the correct one from /sys/class/backlight
-  "format": "☀ {percent}%",
-  "format-icons": ["", "", "", "", "", "", ""],
-  "scroll-step": 5,
-  "on-click": "brightnessctl set 2%+",
-  "on-click-right": "brightnessctl set 2%-"
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "☀ {percent}%",
+    "format-icons": ["", "", "", "", "", "", ""],
+    "scroll-step": 5,
+    "on-click": "brightnessctl set 2%+",
+    "on-click-right": "brightnessctl set 2%-"
+  }
 }
-}
-

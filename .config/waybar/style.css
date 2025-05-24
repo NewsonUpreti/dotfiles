@@ -1,84 +1,52 @@
 * {
-  font-family: "MesloLGS Nerd Font Mono", "Font Awesome 6 Free", sans-serif;
-  font-size: 14px;
-}
-window#waybar {
-  background: #1e1e2e;
-  color: #fdf6e3;
-}
-
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-  color: #1a1a1a;
-}
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-  color: #292b2e;
-  background: #1a1a1a;
+    font-family: "MesloLGS Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-size: 13px;
+    color: #CDD6F4; /* Catppuccin Mocha Text */
+    border: none;
+    border-radius: 0;
+    min-height: 0;
 }
 
-#workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
-#pulseaudio,
-#memory,
-#cpu,
-#battery,
-#disk,
-#tray {
-  background: #1a1a1a;
+#waybar {
+    background: #1E1E2E; /* Catppuccin Mocha Base */
+    padding: 0 5px;
 }
-
-#workspaces button.focused {
-  color: #268bd2;
-}
-
 
 #workspaces button {
-  padding: 0 2px;
-  border-radius: 6px;
-  background: transparent;
-  color: #bbbbbb;
-  font-size: 14px;
+    padding: 0 8px;
+    margin: 4px 2px;
+    background: #313244; /* Catppuccin Mocha Surface0 */
+    color: #CDD6F4;
+    border-radius: 4px;
 }
 
-#workspaces button.active {
-  background: #bbb;
-  color: black;
+#waybar #workspaces button.active {
+  border: 1px solid #CDD6F4;
+    font-weight: bold;
+    border-radius: 4px;
 }
 
 #workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-}
-#workspaces button:hover {
-  background: #1a1a1a;
-  border: #1a1a1a;
-  padding: 0 3px;
+    background: #313240; /* Catppuccin Mocha Yellow */
+    color: #1E1E2E;
 }
 
-#pulseaudio {
-  color: #268bd2;
-}
-#memory {
-  color: #2aa198;
-}
-#cpu {
-  color: #6c71c4;
-}
-#battery {
-  color: #859900;
-}
-#disk {
-  color: #b58900;
+#clock, #network, #pulseaudio, #backlight, #memory, #cpu, #battery, #disk, #tray {
+    padding: 0 8px;
+    margin: 4px 2px;
+    background: #313244; /* Catppuccin Mocha Surface0 */
+    border-radius: 4px;
 }
 
-#clock,
-#pulseaudio,
-#memory,
-#cpu,
-#battery,
-#disk {
-  padding: 0 10px;
+#clock:hover, #network:hover, #pulseaudio:hover, #backlight:hover, #memory:hover, #cpu:hover, #battery:hover, #disk:hover {
+    background: #F28FAD; /* Catppuccin Mocha Red */
+    color: #1E1E2E;
+}
+
+#tray > .passive {
+    color: #585B70; /* Catppuccin Mocha Subtext0 */
+}
+
+#tray > .active {
+    color: #F5E0DC; /* Catppuccin Mocha Flamingo */
 }
