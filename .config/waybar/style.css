@@ -38,6 +38,11 @@ window#waybar {
 #workspaces button.focused {
   color: #268bd2;
 }
+#workspaces button.active{
+  font-weight: bold;
+  border:1px solid #fdf6e3;
+  margin-right: 2px;
+}
 #workspaces button:hover {
   box-shadow: inherit;
   text-shadow: inherit;

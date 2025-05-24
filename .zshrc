@@ -205,6 +205,15 @@ alias ta="tmux attach"
 alias doom="zig-out/bin/terminal-doom"
 
 
+alias day="pkill gammastep; nohup gammastep -O 6000 >/dev/null 2>&1 &"
+alias evening="pkill gammastep; nohup gammastep -O 4000 >/dev/null 2>&1 &"
+alias night="pkill gammastep; nohup gammastep -O 3000 >/dev/null 2>&1 &"
+
+logout() {
+  pkill -u "$(whoami)"
+}
+
+
 # set up fzf key bindings and fuzzy completion
 # eval "$(fzf --zsh)"
 # eval $(thefuck --alias)
