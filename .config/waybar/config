@@ -62,8 +62,8 @@
   "hyprland/workspaces": {
     "format": "{icon} {name} ",
     "format-icons": {
-  "active": "",   // filled circle
-  "default": ""   // empty circle
+  "active": "",   // filled circle
+  "default": ""   // empty circle
 }
   },
   "clock#1": {
