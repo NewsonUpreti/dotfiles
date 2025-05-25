@@ -5,7 +5,7 @@
 
 window#waybar {
   background: #1e1e2e;
-  color: #fdf6e3;
+  color: #b4befe;
 }
 
 #custom-right-arrow-dark,
@@ -33,14 +33,14 @@ window#waybar {
 
 #workspaces button {
   padding: 0 2px;
-  color: #fdf6e3;
+  color: #b4befe;
 }
 #workspaces button.focused {
   color: #268bd2;
 }
 #workspaces button.active{
   font-weight: bold;
-  border:1px solid #fdf6e3;
+  border:1px solid #b4befe;
   margin-right: 2px;
 }
 #workspaces button:hover {
@@ -54,16 +54,16 @@ window#waybar {
 }
 
 #pulseaudio {
-  color: #268bd2;
+  color: #89dceb;
 }
 #memory {
-  color: #2aa198;
+  color: #74c7ec;
 }
 #cpu {
-  color: #6c71c4;
+  color: #89b4fa;
 }
 #battery {
-  color: #859900;
+  color: #a6e3a1;
 }
 #disk {
   color: #b58900;
