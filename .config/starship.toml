@@ -21,7 +21,7 @@
 # can use your distro icon in place of  
 format = """\
 [](bg:#1e1e2e fg:#b4befe)\
-[ ](bg:#b4befe fg:#1e1e2e)\
+[ ](bg:#b4befe fg:#1e1e2e)\
 [](fg:#b4befe bg:#1e1e2e)\
 $time\
 [](fg:#1e1e2e bg:#b4befe)\
