@@ -5,7 +5,10 @@
   "modules-left": [
     "custom/left-arrow-light",
     "hyprland/workspaces",
-    "custom/right-arrow-dark"
+    "custom/right-arrow-dark",
+    "custom/right-arrow-light",
+    "hyprland/window",
+    "custom/right-arrow-dark",
   ],
   "modules-center": [
     "custom/left-arrow-dark",
@@ -142,6 +145,10 @@
   "scroll-step": 5,
   "on-click": "brightnessctl set 2%+",
   "on-click-right": "brightnessctl set 2%-"
+},
+"hyprland/window":{
+  "format":" {} ",
+  "separate-outputs": true
 }
 
 }
