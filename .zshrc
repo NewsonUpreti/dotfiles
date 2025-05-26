@@ -246,7 +246,7 @@ alias br="pomodoro 'break'"
 # requirement: xclip
 
 cwd() {
-  pwd | xclip -selection clipboard
+  pwd | wl-copy
   echo "Copied: $(pwd)"
 }
 
