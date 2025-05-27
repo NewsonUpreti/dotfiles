@@ -3,14 +3,19 @@
   "position": "top",
 
   "modules-left": [
-    "custom/left-arrow-light",
     "hyprland/workspaces",
     "custom/right-arrow-dark",
     "custom/right-arrow-light",
     "hyprland/window",
     "custom/right-arrow-dark",
+    "custom/right-arrow-light",
+    "custom/spacer",
+    "custom/spacer",
+    "custom/spacer",
+    "custom/spacer",
   ],
   "modules-center": [
+    "custom/left-arrow-light",
     "custom/left-arrow-dark",
     "clock#1",
     "custom/left-arrow-light",
@@ -19,16 +24,20 @@
     "custom/right-arrow-dark",
     "custom/right-arrow-light",
     "clock#3",
-    "custom/right-arrow-dark"
+    "custom/right-arrow-dark",
+    "custom/right-arrow-light",
   ],
   "modules-right": [
-    "custom/left-arrow-dark",
     "custom/left-arrow-light",
+    "custom/left-arrow-dark",
     "network",
+    "custom/left-arrow-light",
     "custom/left-arrow-dark",
     "pulseaudio",
     "custom/left-arrow-light",
+    "custom/left-arrow-dark",
     "backlight",
+    "custom/left-arrow-light",
     "custom/left-arrow-dark",
     "memory",
     "custom/left-arrow-light",
@@ -37,8 +46,6 @@
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
     "battery",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
   ],
 
   "custom/left-arrow-dark": {
@@ -57,7 +64,10 @@
     "format": "",
     "tooltip": false
   },
-
+  "custom/spacer":{
+    "format": "",
+    "tooltip": false
+  },
   "sway/workspaces": {
     "disable-scroll": true,
     "format": "{name}"
@@ -149,6 +159,6 @@
 "hyprland/window":{
   "format":" {} ",
   "separate-outputs": true
-}
+},
 
 }
