@@ -52,6 +52,11 @@ chmod 700 ~/.ssh
 chmod 600 ~/.ssh/config
 echo "✓ Restored SSH config"
 
+# Restore Wlogout config
+mkdir -p ~/.config/wlogout/
+cp  ~/dotfiles/.config/wlogout/* ~/.config/wlogout/
+echo "✓ Restored Wlogout config"
+
 # load lazygit colors
 mkdir -p ~/.config/lazygit/
 cp ~/dotfiles/.config/lazygit/config.yml ~/.config/lazygit/config.yml
