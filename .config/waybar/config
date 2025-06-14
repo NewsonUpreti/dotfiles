@@ -6,13 +6,6 @@
     "hyprland/workspaces",
     "custom/right-arrow-dark",
     "custom/right-arrow-light",
-    "hyprland/window",
-    "custom/right-arrow-dark",
-    "custom/right-arrow-light",
-    "custom/spacer",
-    "custom/spacer",
-    "custom/spacer",
-    "custom/spacer",
   ],
   "modules-center": [
     "custom/left-arrow-light",

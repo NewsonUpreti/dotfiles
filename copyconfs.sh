@@ -59,6 +59,11 @@ echo "✓ Copied .tmux.conf"
 cp ~/.ssh/config ~/dotfiles/.ssh/config
 echo "✓ Copied SSH config"
 
+# Backup Wlogout config
+mkdir -p ~/dotfiles/.config/wlogout/
+cp ~/.config/wlogout/* ~/dotfiles/.config/wlogout/
+echo "✓ Copied Wlogout config"
+
 # Backup lazygit colors
 cp ~/.config/lazygit/config.yml ~/dotfiles/.config/lazygit/config.yml
 echo "✓ Backed up lazygit catpuccin color"
