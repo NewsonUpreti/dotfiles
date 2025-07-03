@@ -208,6 +208,7 @@ alias doom="zig-out/bin/terminal-doom"
 alias day="pkill gammastep; nohup gammastep -O 6000 >/dev/null 2>&1 &"
 alias evening="pkill gammastep; nohup gammastep -O 4000 >/dev/null 2>&1 &"
 alias night="pkill gammastep; nohup gammastep -O 3000 >/dev/null 2>&1 &"
+alias yt="mpv --ytdl-raw-options=cookies=ytzencookies.txt"
 
 logout() {
   pkill -u "$(whoami)"
@@ -268,6 +269,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=/usr/lib/jvm/graalvm-23/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/graalvm-23
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/Documents:$PATH"
 
 # pnpm
 export PNPM_HOME="/home/vimzone-user7/.local/share/pnpm"
@@ -284,6 +286,7 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(fzf --zsh)"
 
+export PATH="$HOME/.local/bin:$PATH"
 
 source ~/fzf-git.sh/fzf-git.sh
 eval "$(starship init zsh)"
