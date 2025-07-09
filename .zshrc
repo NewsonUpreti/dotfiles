@@ -206,6 +206,11 @@ alias day="pkill gammastep; nohup gammastep -O 6000 >/dev/null 2>&1 &"
 alias evening="pkill gammastep; nohup gammastep -O 4000 >/dev/null 2>&1 &"
 alias night="pkill gammastep; nohup gammastep -O 3000 >/dev/null 2>&1 &"
 
+
+alias cdpbe="ssh root@95.216.195.68"
+alias cdpfe="ssh root@135.181.254.88"
+alias twfe="ssh root@37.27.13.207"
+
 logout() {
   pkill -u "$(whoami)"
 }

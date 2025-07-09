@@ -11,11 +11,11 @@ window#waybar {
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
   color: #1e1e2e;
-  background: #292b2e; 
+  background: #313244; 
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-  color: #292b2e;
+  color: #313244;
   background: #1e1e2e;
 }
 #custom-spacer{
