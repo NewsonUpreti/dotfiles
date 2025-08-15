@@ -209,6 +209,7 @@ alias day="pkill gammastep; nohup gammastep -O 6000 >/dev/null 2>&1 &"
 alias evening="pkill gammastep; nohup gammastep -O 4000 >/dev/null 2>&1 &"
 alias night="pkill gammastep; nohup gammastep -O 3000 >/dev/null 2>&1 &"
 alias yt="mpv --ytdl-raw-options=cookies=ytzencookies.txt"
+alias dock="lazydocker"
 
 logout() {
   pkill -u "$(whoami)"
