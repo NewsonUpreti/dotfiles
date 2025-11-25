@@ -19,6 +19,7 @@
     "clock#3",
     "custom/right-arrow-dark",
     "custom/right-arrow-light",
+    "idle_inhibitor",
   ],
   "modules-right": [
     "custom/left-arrow-light",
@@ -142,7 +143,7 @@
     "icon-size": 20
   },
 "backlight": {
-  "device": "intel_backlight",  // or the correct one from /sys/class/backlight
+  "device": "amdgpu_bl1",  // or the correct one from /sys/class/backlight
   "format": "☀ {percent}%",
   "format-icons": ["", "", "", "", "", "", ""],
   "scroll-step": 5,
@@ -153,5 +154,12 @@
   "format":" {} ",
   "separate-outputs": true
 },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "   ",
+            "deactivated": "   "
+        }
+    },
 
 }
