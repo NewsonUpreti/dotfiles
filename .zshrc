@@ -303,3 +303,4 @@ function y() {
 if [[ -f "$HOME/.zsh_aliases_local" ]]; then
   source "$HOME/.zsh_aliases_local"
 fi
+export PATH="$HOME/.local/bin:$PATH"
