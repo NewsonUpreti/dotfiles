@@ -62,6 +62,11 @@ mkdir -p ~/.config/lazygit/
 cp ~/dotfiles/.config/lazygit/config.yml ~/.config/lazygit/config.yml
 echo "✓ Restored lazygit catpuccin color"
 
+# load Rofi Config
+mkdir -p ~/.config/rofi/
+cp -r ~/dotfiles/.config/rofi/* ~/.config/rofi/
+echo "✓ Restored Rofi Config"
+
 # in new devices, may need to chmod 600 sshPub_key to access the repo.
 
 # Load GNOME shell extensions settings

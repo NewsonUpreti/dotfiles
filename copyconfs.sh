@@ -64,6 +64,12 @@ mkdir -p ~/dotfiles/.config/wlogout/
 cp ~/.config/wlogout/* ~/dotfiles/.config/wlogout/
 echo "✓ Copied Wlogout config"
 
+
+# Backup Rofi config
+mkdir -p ~/dotfiles/.config/rofi/
+cp -r ~/.config/rofi/* ~/dotfiles/.config/rofi/
+echo "✓ Copied Rofi config"
+
 # Backup lazygit colors
 cp ~/.config/lazygit/config.yml ~/dotfiles/.config/lazygit/config.yml
 echo "✓ Backed up lazygit catpuccin color"
