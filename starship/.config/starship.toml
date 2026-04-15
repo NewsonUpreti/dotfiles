@@ -1,0 +1,66 @@
+
+# install starship to begin using
+# install with shell
+# curl -sS https://starship.rs/install.sh | sh
+
+# if in macos, install with homebrew. 
+# brew install starship
+
+# configuration for bash
+# ~/.bashrc
+# eval "$(starship init bash)"
+
+# configuration for zsh
+# ~/.zshrc
+# eval "$(starship init zsh)"
+
+# configuration for fish
+# ~/.config/fish/config.fish
+# starship init fish | source
+
+
+format = """\
+[](bg:#0b1220 fg:#1f2a44)\
+[ ](bg:#1f2a44 fg:#93c5fd)\
+[](fg:#1f2a44 bg:#0b1220)\
+$time\
+[](fg:#0b1220 bg:#1f2a44)\
+$directory\
+$git_branch\
+$git_status\
+[](fg:#1f2a44 bg:#0b1220)\
+$character\
+"""
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#0b1220 fg:#93c5fd"
+format = "[ 󱑍 $time ]($style)"
+
+[directory]
+format = "[  $path ]($style)"
+style = "fg:#93c5fd bg:#1f2a44"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "fg:#93c5fd bg:#0b1220"
+format = '[](fg:#1f2a44 bg:#0b1220)[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#0b1220 fg:#93c5fd"
+format = '[ $modified$staged$untracked$conflicted$ahead_behind ]($style)'
+
+modified = '$count! '
+staged = '$count󰱒 '
+untracked = '$count '
+conflicted = '$count '
+ahead = '$count⇡ '
+behind = '$count⇣ '
+diverged = '$ahead_count⇕ $behind_count⇣'
+
+[character]
+success_symbol = '[ ➜](fg:#93c5fd bold)'
+error_symbol = '[ ✗](fg:#f87171 bold)'
