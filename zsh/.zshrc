@@ -23,6 +23,9 @@ alias j="z"
 # Defaults
 export EDITOR=nvim
 
+# make the shell case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}'
+
 # -------------------------------
 # ⚡ LAZY LOAD NVM (BIG WIN)
 # -------------------------------
