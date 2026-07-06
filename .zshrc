@@ -201,6 +201,7 @@ alias kex="gnome-extensions disable azclock@azclock.gitlab.com"
 alias whatismyip="nslookup myip.opendns.com resolver1.opendns.com"
 alias lg="lazygit"
 alias ta="tmux attach"
+alias speedtest="~/./speedtest"
 
 alias day="pkill gammastep; nohup gammastep -O 6000 >/dev/null 2>&1 &"
 alias evening="pkill gammastep; nohup gammastep -O 4000 >/dev/null 2>&1 &"
@@ -270,7 +271,7 @@ export JAVA_HOME=/usr/lib/jvm/graalvm-23
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="/home/vimzone-user7/.local/share/pnpm"
+export PNPM_HOME="/home/vimzone-user3/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
